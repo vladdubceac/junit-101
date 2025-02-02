@@ -1,9 +1,6 @@
 package md.vladdubceac.learning;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.DisplayNameGenerator;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.lang.reflect.Method;
 import java.time.Duration;
@@ -11,10 +8,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-//@DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-//@DisplayNameGeneration(DisplayNameGenerator.Simple.class)
-//@DisplayNameGeneration(DisplayNameGenerator.IndicativeSentences.class)
-//@DisplayNameGeneration(DemoTest.ReplaceCamelCase.class)
+@TestMethodOrder(MethodOrderer.MethodName.class)
 public class DemoTest {
 
     Demo demo;
@@ -22,7 +16,6 @@ public class DemoTest {
     @BeforeEach
     void setupBeforeEach() {
         demo = new Demo();
-//        System.out.println("@BeforeEach executes before the execution of each test method");
     }
 
     @Test
@@ -104,25 +97,6 @@ public class DemoTest {
             demo.checkTimeout();
         }, "Method should execute in 3 seconds");
     }
-
-    /*
-    @AfterEach
-    void tearDownAfterEach(){
-        System.out.println("Running @AfterEach");
-        System.out.println();
-    }
-
-    @BeforeAll
-    static void setupBeforeEachClass(){
-        System.out.println("@BeforeAll executes only once before all test methods execution in the class");
-    }
-
-    @AfterAll
-    static void tearDownAfterAll(){
-        System.out.println("@AfterAll executes only once after all test methods execution in the class");
-    }
-     */
-
 
     static class ReplaceCamelCase extends DisplayNameGenerator.Standard {
         public ReplaceCamelCase() {
