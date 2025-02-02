@@ -73,14 +73,14 @@ public class DemoTest {
     @DisplayName("Iterable equals")
     @Test
     void testIterableEquals() {
-        List<String> theList = List.of("luv", "2", "code");
+        List<String> theList = List.of("Hello","World");
         assertIterableEquals(theList, demo.getWordsList(), "Expected list should be same as actual list");
     }
 
     @DisplayName("Lines match")
     @Test
     void testLinesMatch() {
-        List<String> theList = List.of("luv", "2", "code");
+        List<String> theList = List.of("Hello","World");
 
         assertLinesMatch(theList, demo.getWordsList(), "Lines should match");
     }
