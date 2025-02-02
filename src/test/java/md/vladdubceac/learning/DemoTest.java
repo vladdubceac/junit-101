@@ -28,6 +28,13 @@ public class DemoTest {
     }
 
     @Test
+    @DisplayName("Multiply test")
+    void testMultiply(){
+        assertEquals(12, demo.multiply(3,4)," 3*4 must be 12");
+        assertNotEquals(15, demo.multiply(3,4)," 3*4 cannot be 15");
+    }
+
+    @Test
     @DisplayName("Null and Not Null")
     @Order(0)
     void testNullAndNotNull() {
