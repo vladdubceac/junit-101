@@ -59,4 +59,14 @@ public class ConditionalTest {
     void testOnlyForJavaRangeMin(){
 
     }
+
+    @Test
+    @EnabledIfEnvironmentVariable(named="RUN_ENV", matches = "dev")
+    void testOnlyForDevEnvironment(){
+    }
+
+    @Test
+    @EnabledIfSystemProperty(named = "ACTION_SYS_PROP",matches = "CI_CD_DEPLOY")
+    void testOnlyForSystemProperty(){
+    }
 }
