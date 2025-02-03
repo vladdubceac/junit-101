@@ -2,8 +2,7 @@ package md.vladdubceac.learning;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.condition.EnabledOnOs;
-import org.junit.jupiter.api.condition.OS;
+import org.junit.jupiter.api.condition.*;
 
 public class ConditionalTest {
 
@@ -34,6 +33,30 @@ public class ConditionalTest {
     @Test
     @EnabledOnOs(OS.LINUX)
     public void testForLinuxOnly(){
+
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_17)
+    void testOnlyForJava17(){
+
+    }
+
+    @Test
+    @EnabledOnJre(JRE.JAVA_11)
+    void testOnlyForJava11(){
+
+    }
+
+    @Test
+    @EnabledForJreRange(min = JRE.JAVA_11, max = JRE.JAVA_23)
+    void testOnlyForJavaRange(){
+
+    }
+
+    @Test
+    @EnabledForJreRange(min = JRE.JAVA_11)
+    void testOnlyForJavaRangeMin(){
 
     }
 }
